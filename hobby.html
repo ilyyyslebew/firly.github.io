@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<title>CV FirlyAulia</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/6/w3.css">
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Georgia', 'Times New Roman', serif;
+    }
+
+    @keyframes fadeInUp {
+        from {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    body {
+        background: #E8DCCF;
+        background-image: url('bg-pola.jpg');
+        background-size: 400px;
+        background-repeat: repeat;
+        background-blend-mode: soft-light;
+        display: flex;
+        min-height: 100vh;
+        color: #5C4033;
+    }
+
+    .sidebar {
+        width: 260px;
+        background: rgba(243, 233, 220, 0.85);
+        backdrop-filter: blur(5px);
+        padding: 30px 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        border-right: 2px solid #C8B8A5;
+        position: fixed;
+        height: 100vh;
+    }
+
+    .bow-icon {
+        font-size: 28px;
+        margin-bottom: 10px;
+    }
+
+    .profile-img {
+        width: 140px;
+        height: 140px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 3px solid #B8A896;
+        box-shadow: 0 4px 10px rgba(92, 64, 51, 0.15);
+        margin-bottom: 15px;
+        transition: transform 0.3s ease;
+    }
+
+    .profile-img:hover {
+        transform: scale(1.05);
+    }
+
+    .sidebar h2 {
+        font-size: 20px;
+        color: #5C4033;
+        margin-bottom: 5px;
+    }
+
+    .sidebar .tagline {
+        font-size: 13px;
+        color: #8B7355;
+        margin-bottom: 25px;
+    }
+
+    .sidebar-nav {
+        width: 100%;
+    }
+
+    .sidebar-nav a {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        color: #5C4033;
+        text-decoration: none;
+        padding: 10px 15px;
+        margin: 6px 0;
+        border-radius: 8px;
+        background: rgba(184, 168, 150, 0.15);
+        font-size: 15px;
+        transition: all 0.4s ease;
+    }
+
+    .sidebar-nav a:hover,
+    .sidebar-nav a.active {
+        background: #8B5A2B;
+        color: #fff;
+        transform: translateX(5px);
+        box-shadow: 2px 3px 8px rgba(139, 90, 43, 0.25);
+    }
+
+    .sidebar-footer {
+        margin-top: auto;
+        padding-top: 30px;
+        font-style: italic;
+        color: #8B7355;
+        font-size: 14px;
+    }
+
+    .main-content {
+        flex: 1;
+        margin-left: 260px;
+        padding: 40px 50px;
+        background: rgba(248, 240, 229, 0.7);
+        min-height: 100vh;
+        animation: fadeInUp 0.6s ease forwards;
+        opacity: 0;
+    }
+
+    .page-header-top {
+        display: flex;
+        justify-content: flex-end;
+        margin-bottom: 20px;
+    }
+
+    .search-bar {
+        background: rgba(243, 233, 220, 0.8);
+        border: 1px solid #D4C4B0;
+        border-radius: 20px;
+        padding: 6px 15px;
+        width: 180px;
+        font-size: 13px;
+        color: #8B7355;
+    }
+
+    .page-title {
+        font-size: 36px;
+        color: #5C4033;
+        margin-bottom: 10px;
+    }
+
+    .page-subtitle {
+        color: #8B7355;
+        font-size: 16px;
+        margin-bottom: 40px;
+    }
+
+    .memory-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 30px;
+    }
+
+    .memory-card {
+        background: rgba(255, 249, 240, 0.85);
+        padding: 20px;
+        border-radius: 14px;
+        border: 2px solid transparent;
+        border-image: linear-gradient(135deg, #FFD700, #FF6B35, #00A2FF, #A855F7) 1;
+        box-shadow: 0 3px 12px rgba(92, 64, 51, 0.08);
+        transition: all 0.3s ease;
+        text-align: center;
+        position: relative;
+    }
+
+    .memory-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 10px 25px rgba(92, 64, 51, 0.15);
+    }
+
+    .basketball-icon {
+        position: absolute;
+        top: 10px;
+        left: 12px;
+        font-size: 22px;
+        opacity: 0.25;
+    }
+
+    .memory-img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+        border-radius: 8px;
+        display: block;
+        margin-bottom: 15px;
+    }
+
+    .memory-card h3 {
+        font-size: 18px;
+        color: #5C4033;
+        margin-bottom: 8px;
+    }
+
+    .memory-card p {
+        font-size: 14px;
+        color: #7B654F;
+        line-height: 1.6;
+    }
+
+    .social-footer {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        margin-top: 50px;
+        padding-top: 20px;
+        border-top: 1px dashed #C8B8A5;
+    }
+
+    .social-footer a {
+        color: #7B654F;
+        font-size: 20px;
+        text-decoration: none;
+        transition: all 0.3s ease;
+    }
+
+    .social-footer a:hover {
+        color: #5C4033;
+        transform: translateY(-3px);
+        display: inline-block;
+    }
+</style>
+
+<body>
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <div class="bow-icon">🎀</div>
+        <img src="foto-profil.jpg" alt="Foto Profil" class="profile-img">
+        <h2>Firly Aulia Ghina ♡</h2>
+        <p class="tagline">Student • Atlet • Informatics Engineering</p>
+
+        <nav class="sidebar-nav">
+            <a href="beranda.html">🏠 Beranda</a>
+            <a href="profile.html">👤 Profile</a>
+            <a href="pendidikan.html">🎓 Riwayat Pendidikan</a>
+            <a href="skill.html">⚙️ Skill</a>
+            <a href="prestasi.html">🏆 Prestasi</a>
+            <a href="hobby.html" class="active">🎮 Hobby</a>
+            <a href="sosmed.html">🔗 Sosial Media</a>
+        </nav>
+
+        <div class="sidebar-footer">
+            "Keep going ♡"
+        </div>
+    </aside>
+
+    <!-- Page Content -->
+    <main class="main-content">
+        <div class="page-header-top">
+            <input type="text" class="search-bar" placeholder="🔍 Search...">
+        </div>
+
+        <h1 class="page-title">✧ My Hobby ✧</h1>
+        <p class="page-subtitle">Memory-memory seru dari hal-hal yang aku suka lakukan ♡</p>
+
+        <div class="memory-grid">
+            <!-- Memory 1 -->
+            <div class="memory-card">
+                <span class="basketball-icon">🏀</span>
+                <img src="hobby-1.jpg" alt="Memory 1" class="memory-img">
+                <h3>Basket Bareng Teman</h3>
+                <p>Main basket sore bareng teman-teman sekolah di lapangan dekat rumah. Seru banget sambil ngobrol dan
+                    tertawa bersama!</p>
+            </div>
+
+            <!-- Memory 2 -->
+            <div class="memory-card">
+                <span class="basketball-icon">🏀</span>
+                <img src="hobby-2.jpg" alt="Memory 2" class="memory-img">
+                <h3>Roblox Adventure</h3>
+                <p>Main Roblox bareng temen online, nyobain game adventure dan bikin karakter sesuai style favoritku.
+                </p>
+            </div>
+
+            <!-- Memory 3 -->
+            <div class="memory-card">
+                <span class="basketball-icon">🏀</span>
+                <img src="hobby-3.jpg" alt="Memory 3" class="memory-img">
+                <h3>Nonton Pertandingan Basket</h3>
+                <p>Nonton pertandingan basket lokal di kota. Suasana ramai dan semangat banget mendukung tim favorit!
+                </p>
+            </div>
+
+            <!-- Memory 4 -->
+            <div class="memory-card">
+                <span class="basketball-icon">🏀</span>
+                <img src="https://tse4.mm.bing.net/th/id/OIP.lwgUeBhze_smxTjN2J_lKQHaE4?r=0&rs=1&pid=ImgDetMain&o=7&rm=3"
+                    alt="Memory 4" class="memory-img">
+                <h3>Bikin Outfit Roblox</h3>
+                <p>Waktu luang dipakai buat desain outfit karakter Roblox yang lucu dan unik. Hasilnya bikin mood makin
+                    baik!</p>
+            </div>
+        </div>
+
+        <div class="social-footer">
+            <a href="#">📷</a>
+            <a href="#">♪</a>
+            <a href="#">▶</a>
+            <a href="#">✉</a>
+        </div>
+    </main>
+</body>
+
+</html>

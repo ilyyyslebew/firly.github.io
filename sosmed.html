@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<title>CV FirlyAulia</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/6/w3.css">
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Georgia', 'Times New Roman', serif;
+    }
+
+    @keyframes fadeInUp {
+        from {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    body {
+        background: #E8DCCF;
+        background-image: url('bg-pola.jpg');
+        background-size: 400px;
+        background-repeat: repeat;
+        background-blend-mode: soft-light;
+        display: flex;
+        min-height: 100vh;
+        color: #5C4033;
+    }
+
+    .sidebar {
+        width: 260px;
+        background: rgba(243, 233, 220, 0.85);
+        backdrop-filter: blur(5px);
+        padding: 30px 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        border-right: 2px solid #C8B8A5;
+        position: fixed;
+        height: 100vh;
+    }
+
+    .bow-icon {
+        font-size: 28px;
+        margin-bottom: 10px;
+    }
+
+    .profile-img {
+        width: 140px;
+        height: 140px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 3px solid #B8A896;
+        box-shadow: 0 4px 10px rgba(92, 64, 51, 0.15);
+        margin-bottom: 15px;
+        transition: transform 0.3s ease;
+    }
+
+    .profile-img:hover {
+        transform: scale(1.05);
+    }
+
+    .sidebar h2 {
+        font-size: 20px;
+        color: #5C4033;
+        margin-bottom: 5px;
+    }
+
+    .sidebar .tagline {
+        font-size: 13px;
+        color: #8B7355;
+        margin-bottom: 25px;
+    }
+
+    .sidebar-nav {
+        width: 100%;
+    }
+
+    .sidebar-nav a {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        color: #5C4033;
+        text-decoration: none;
+        padding: 10px 15px;
+        margin: 6px 0;
+        border-radius: 8px;
+        background: rgba(184, 168, 150, 0.15);
+        font-size: 15px;
+        transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        transform-origin: left center;
+    }
+
+    .sidebar-nav a:hover,
+    .sidebar-nav a.active {
+        background: #8B5A2B;
+        color: #fff;
+        transform: translateX(5px);
+        box-shadow: 2px 3px 8px rgba(139, 90, 43, 0.25);
+    }
+
+    .sidebar-footer {
+        margin-top: auto;
+        padding-top: 30px;
+        font-style: italic;
+        color: #8B7355;
+        font-size: 14px;
+    }
+
+    .main-content {
+        flex: 1;
+        margin-left: 260px;
+        padding: 40px 50px;
+        background: rgba(248, 240, 229, 0.7);
+        min-height: 100vh;
+        animation: fadeInUp 0.6s ease forwards;
+        opacity: 0;
+    }
+
+    .page-header-top {
+        display: flex;
+        justify-content: flex-end;
+        margin-bottom: 20px;
+    }
+
+    .search-bar {
+        background: rgba(243, 233, 220, 0.8);
+        border: 1px solid #D4C4B0;
+        border-radius: 20px;
+        padding: 6px 15px;
+        width: 180px;
+        font-size: 13px;
+        color: #8B7355;
+    }
+
+    .page-title {
+        font-size: 36px;
+        color: #5C4033;
+        margin-bottom: 10px;
+    }
+
+    .page-subtitle {
+        color: #8B7355;
+        font-size: 16px;
+        margin-bottom: 40px;
+    }
+
+    .social-container {
+        max-width: 600px;
+        margin: 0 auto;
+    }
+
+    .social-card {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        background: rgba(255, 249, 240, 0.85);
+        padding: 22px 28px;
+        border-radius: 12px;
+        border: 1px solid #E5D8C8;
+        box-shadow: 0 3px 10px rgba(92, 64, 51, 0.08);
+        margin-bottom: 20px;
+        transition: all 0.3s ease;
+        text-decoration: none;
+    }
+
+    .social-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 20px rgba(92, 64, 51, 0.12);
+        border-color: #B89978;
+    }
+
+    .social-icon {
+        font-size: 32px;
+        width: 55px;
+        height: 55px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: rgba(184, 168, 150, 0.2);
+        border-radius: 50%;
+        flex-shrink: 0;
+    }
+
+    .social-info {
+        flex: 1;
+    }
+
+    .social-info h3 {
+        font-size: 18px;
+        color: #5C4033;
+        margin-bottom: 4px;
+    }
+
+    .social-info p {
+        font-size: 15px;
+        color: #7B654F;
+    }
+
+    .footer-note {
+        text-align: center;
+        margin-top: 50px;
+        padding: 20px;
+        font-style: italic;
+        color: #8B7355;
+    }
+</style>
+
+<body>
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <div class="bow-icon">🎀</div>
+        <img src="foto-profil.jpg" alt="Foto Profil" class="profile-img">
+        <h2>Firly Aulia Ghina ♡</h2>
+        <p class="tagline">Student • Student • Atlet • Informatics Engineering</p>
+
+        <nav class="sidebar-nav">
+            <a href="beranda.html">🏠 Beranda</a>
+            <a href="profile.html">👤 Profile</a>
+            <a href="pendidikan.html">🎓 Riwayat Pendidikan</a>
+            <a href="skill.html">⚙️ Skill</a>
+            <a href="prestasi.html">🏆 Prestasi</a>
+            <a href="hobby.html">🎮 Hobby</a>
+            <a href="sosmed.html" class="active">🔗 Sosial Media</a>
+        </nav>
+
+        <div class="sidebar-footer">
+            "Keep going ♡"
+        </div>
+    </aside>
+
+    <!-- Page Content -->
+    <main class="main-content">
+        <div class="page-header-top">
+            <input type="text" class="search-bar" placeholder="🔍 Search...">
+        </div>
+
+        <h1 class="page-title" style="text-align: center;">✧ Hubungi Aku ✧</h1>
+        <p class="page-subtitle" style="text-align: center;">Jangan ragu untuk menyapa ya, aku senang banget bertemu
+            teman baru ♡</p>
+
+        <div class="social-container">
+            <!-- EMAIL -->
+            <a href="mailto:emailkamu@gmail.com" class="social-card">
+                <div class="social-icon">✉️</div>
+                <div class="social-info">
+                    <h3>Email</h3>
+                    <p>emailkamu@gmail.com</p>
+                </div>
+            </a>
+
+            <!-- INSTAGRAM -->
+            <a href="https://instagram.com/username_kamu" target="_blank" class="social-card">
+                <div class="social-icon">📷</div>
+                <div class="social-info">
+                    <h3>Instagram</h3>
+                    <p>@username_kamu</p>
+                </div>
+            </a>
+
+            <!-- DISCORD -->
+            <a href="#" class="social-card">
+                <div class="social-icon">💬</div>
+                <div class="social-info">
+                    <h3>Discord</h3>
+                    <p>username#0000</p>
+                </div>
+            </a>
+
+            <!-- TIKTOK -->
+            <a href="https://tiktok.com/@username_kamu" target="_blank" class="social-card">
+                <div class="social-icon">🎵</div>
+                <div class="social-info">
+                    <h3>TikTok</h3>
+                    <p>@username_kamu</p>
+                </div>
+            </a>
+        </div>
+
+        <div class="footer-note">
+            Terima kasih sudah berkunjung ke CV-ku! Semoga kita bisa bertukar kabar ♡
+        </div>
+    </main>
+
+</body>
+
+</html>
