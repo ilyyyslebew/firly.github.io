@@ -1,16 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
-<title>CV FirlyAulia</title>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/6/w3.css">
-<!DOCTYPE html>
 <html lang="id">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Personal CV - Putri Anindya</title>
+    <title>Personal CV - Firly Aulia Ghina</title>
     <style>
         * {
             margin: 0;
@@ -32,12 +26,21 @@
         }
 
         body {
-            background: #E8DCCF;
+            /* ===== GANTI FOTO LATAR BELAKANG DI SINI ===== */
             background-image: url('bg-pola.jpg');
-            background-size: 400px;
-            background-repeat: repeat;
-            background-blend-mode: soft-light;
-            display: flex;
+            /* Ganti 'bg-pola.jpg' dengan nama file foto kamu, contoh: url('foto-latar.jpg') */
+
+            background-size: cover;
+            /* Pilihan lain: 100% 100% | contain | 600px auto */
+            background-repeat: no-repeat;
+            /* Pilihan lain: repeat | repeat-x | repeat-y */
+            background-position: center center;
+            /* Pilihan lain: top left | top right | bottom center */
+            background-attachment: fixed;
+            /* Latar tetap saat di-scroll — hapus baris ini jika tidak mau */
+
+            background-color: #E8DCCF;
+            /* Warna cadangan jika gambar belum dimuat */
             min-height: 100vh;
             color: #5C4033;
         }
@@ -334,20 +337,20 @@
             display: inline-block;
         }
     </style>
+</head>
 
 <body>
-
     <!-- Sidebar -->
     <aside class="sidebar">
         <div class="bow-icon">🎀</div>
-        <img src="foto-profil.jpg" alt="Foto Profil" class="profile-img">
+        <img src="img/pp.jpeg" alt="Foto Profil" class="profile-img">
         <h2>Firly Aulia Ghina ♡</h2>
         <p class="tagline">Student • Atlet • Informatics Engineering</p>
 
         <nav class="sidebar-nav">
             <a href="index.html" class="active">🏠 Beranda</a>
             <a href="profile.html">👤 Profile</a>
-            <a href="pendidikan.html">🎓 Riwayat Pendidikan</a>
+            <a href="pendidikan.html">🎓 Pengalaman Berorganisasi</a>
             <a href="skill.html">⚙️ Skill</a>
             <a href="prestasi.html">🏆 Prestasi</a>
             <a href="hobby.html">🎮 Hobby</a>
